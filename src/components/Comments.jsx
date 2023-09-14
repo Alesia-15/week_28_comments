@@ -2,22 +2,31 @@ import React, { useState } from "react";
 
 function Comments() {
   let [text, setText] = useState("");
+
   let handleChange = (e) => {
     setText((text = e.target.value));
   };
+
+  const arrComments = [1, 2, 3];
+
   let handleSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
       alert("Напишите комментарий!");
     } else {
-      console.log(text);
+      arrComments[arrComments.length] = text;
+      return console.log(arrComments);
     }
   };
 
   return (
     <div className="container">
       <h1>Сервис комментариев со спам фильтром</h1>
-      <div className="comments"></div>
+      <div className="comments">
+        {arrComments.map((el, index) => {
+          return <p key={index}>{el}</p>;
+        })}
+      </div>
       <form onSubmit={handleSubmit}>
         <textarea onChange={handleChange} value={text} />
         <br />
