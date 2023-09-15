@@ -2,20 +2,19 @@ import React, { useState } from "react";
 
 function Comments() {
   let [text, setText] = useState("");
+  const [arrComments, setArrComments] = useState([]);
 
   let handleChange = (e) => {
     setText((text = e.target.value));
   };
-
-  const arrComments = [1, 2, 3];
 
   let handleSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
       alert("Напишите комментарий!");
     } else {
-      arrComments[arrComments.length] = text;
-      return console.log(arrComments);
+      setArrComments([...arrComments, text]);
+      setText("");
     }
   };
 
