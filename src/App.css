@@ -24,17 +24,16 @@ h1 {
 p {
   margin: 5px 0;
   padding: 10px;
-  background-color: #e5fff6;
   border-radius: 10px;
 }
-p.red {
-  background-color: #ff00001f;
+p.green {
+  background-color: #e5fff6;
 }
 p.blue {
   background-color: #00ffff21;
 }
-p.yellow {
-  background-color: #ffff0330;
+p.purple {
+  background-color: #f5f2ff;
 }
 form {
   width: 80%;

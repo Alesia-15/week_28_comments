@@ -23,7 +23,16 @@ function Comments() {
       <h1>Сервис комментариев со спам фильтром</h1>
       <div className="comments">
         {arrComments.map((el, index) => {
-          return <p key={index}>{el}</p>;
+          return (
+            <p
+              key={index}
+              className={
+                index % 3 === 0 ? "green" : index % 2 === 0 ? "blue" : "purple"
+              }
+            >
+              {el}
+            </p>
+          );
         })}
       </div>
       <form onSubmit={handleSubmit}>
