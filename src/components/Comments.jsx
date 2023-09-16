@@ -13,7 +13,7 @@ function Comments() {
     if (text === "") {
       alert("Напишите комментарий!");
     } else {
-      setArrComments([...arrComments, text]);
+      setArrComments([...arrComments, text].reverse());
       setText("");
     }
   };
